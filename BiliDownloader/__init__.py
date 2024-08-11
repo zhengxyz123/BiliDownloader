@@ -15,7 +15,7 @@
 import sys
 
 from PySide6.QtCore import QLibraryInfo, QLocale, QTranslator
-from PySide6.QtWidgets import QApplication, QStyleFactory
+from PySide6.QtWidgets import QApplication
 
 import BiliDownloader.resources
 from BiliDownloader.main import MainWindow
@@ -23,7 +23,6 @@ from BiliDownloader.main import MainWindow
 
 def main() -> int:
     app = QApplication(sys.argv)
-    app.setStyle("Breeze")
     translator = QTranslator(app)
     if translator.load(
         f"qtbase_{QLocale.system().name()}",

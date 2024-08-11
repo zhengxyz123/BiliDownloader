@@ -12,7 +12,7 @@
 # You should have received a copy of the GNU General Public License along with this
 # program. If not, see <https://www.gnu.org/licenses/>.
 
-from PySide6.QtCore import Qt, Slot
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QGridLayout,
     QLabel,
@@ -67,7 +67,6 @@ class GetInfoWizardPage(QWizardPage):
             return True
         return False
 
-    @Slot()
     def check_bvid(self) -> None:
         bvid = self.bvid_edit.text()
         data = get_json(
