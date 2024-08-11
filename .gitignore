@@ -1,0 +1,37 @@
+# Python
+__pycache__
+*.py[cod]
+
+# Virtualenvs
+bin
+include
+lib
+lib64
+Scripts
+pyvenv.cfg
+/env
+/.env
+/.venv2
+/.venv3
+
+# Build
+build
+dist
+*.spec
+
+# IDEs and editors
+.idea
+.vscode
+*~
+*.bak
+*.cache
+*.swp
+
+# Platform specific
+.DS_Store
+
+# Qt binary files
+*.qm
+
+# Others
+share
