@@ -12,17 +12,24 @@
 # You should have received a copy of the GNU General Public License along with this
 # program. If not, see <https://www.gnu.org/licenses/>.
 
-from enum import IntEnum
+from PySide6.QtWidgets import (
+    QFileDialog,
+    QGridLayout,
+    QLabel,
+    QLineEdit,
+    QPushButton,
+    QWizard,
+    QWizardPage,
+)
+
+from BiliDownloader.utils import get_json
 
 
-class PageEnum(IntEnum):
-
-    StartPage = 0
-    GetInfoPage = 1
-    SetInfoPage = 2
-    PlaylistPage = 3
-    DownloadPage = 4
-    FinishPage = 5
+class PlaylistWizardPage(QWizardPage):
+    def __init__(self, parent: QWizard | None = None) -> None:
+        super().__init__(parent)
+        self.setTitle(self.tr("Find a playlist."))
+        self.setSubTitle(self.tr("Please select which content to download."))
 
 
-__all__ = ("PageEnum",)
+__all__ = ("PlaylistWizardPage",)

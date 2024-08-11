@@ -22,6 +22,7 @@ from PySide6.QtWidgets import (
     QWizardPage,
 )
 
+from BiliDownloader.pages import PageEnum
 from BiliDownloader.utils import get_json, sec2str
 
 
@@ -35,6 +36,7 @@ class GetInfoWizardPage(QWizardPage):
                 "automatically get related information."
             )
         )
+        self._is_playlist = False
 
         self.main_layout = QGridLayout(self)
         self.bvid_label = QLabel(self.tr("BV id:"), self)
@@ -67,6 +69,11 @@ class GetInfoWizardPage(QWizardPage):
             return True
         return False
 
+    def nextId(self) -> int:
+        if self._is_playlist:
+            return PageEnum.PlaylistPage
+        return PageEnum.SetInfoPage
+
     def check_bvid(self) -> None:
         bvid = self.bvid_edit.text()
         data = get_json(
@@ -82,6 +89,9 @@ class GetInfoWizardPage(QWizardPage):
         duration_text = sec2str(duration)
         if (n := data["data"]["videos"]) > 1:
             duration_text += self.tr(" (include {n} videos)").format(n=n)
+            self._is_playlist = True
+        else:
+            self._is_playlist = False
         self.duration_time_label.setText(duration_text)
         self.completeChanged.emit()
 

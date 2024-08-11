@@ -14,12 +14,12 @@
         <translation>请按照提示输入，程序会自动获取相关信息。</translation>
     </message>
     <message>
-        <location filename="../BiliDownloader/pages/get_info.py" line="41"/>
+        <location filename="../BiliDownloader/pages/get_info.py" line="42"/>
         <source>BV id:</source>
         <translation>BV号:</translation>
     </message>
     <message>
-        <location filename="../BiliDownloader/pages/get_info.py" line="43"/>
+        <location filename="../BiliDownloader/pages/get_info.py" line="44"/>
         <source>Please enter the BV id</source>
         <translation>请输入BV号</translation>
     </message>
@@ -37,8 +37,8 @@
         <location filename="../BiliDownloader/pages/get_info.py" line="47"/>
         <location filename="../BiliDownloader/pages/get_info.py" line="50"/>
         <location filename="../BiliDownloader/pages/get_info.py" line="69"/>
-        <location filename="../BiliDownloader/pages/get_info.py" line="78"/>
-        <location filename="../BiliDownloader/pages/get_info.py" line="79"/>
+        <location filename="../BiliDownloader/pages/get_info.py" line="83"/>
+        <location filename="../BiliDownloader/pages/get_info.py" line="84"/>
         <source>Unknown</source>
         <translation>未知</translation>
     </message>
@@ -48,9 +48,35 @@
         <translation>时长:</translation>
     </message>
     <message>
-        <location filename="../BiliDownloader/pages/get_info.py" line="86"/>
+        <location filename="../BiliDownloader/pages/get_info.py" line="91"/>
         <source> (include {n} videos)</source>
         <translation>（包含{n}个视频）</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistWizardPage</name>
+    <message>
+        <location filename="../BiliDownloader/pages/playlist.py" line="31"/>
+        <source>Find a playlist.</source>
+        <translation>找到播放列表。</translation>
+    </message>
+    <message>
+        <location filename="../BiliDownloader/pages/playlist.py" line="32"/>
+        <source>Please select which content to download.</source>
+        <translation>请选择需要下载哪些内容。</translation>
+    </message>
+</context>
+<context>
+    <name>SetInfoWizardPage</name>
+    <message>
+        <location filename="../BiliDownloader/pages/set_info.py" line="31"/>
+        <source>Please fill in the related information.</source>
+        <translation>请填写相关数据。</translation>
+    </message>
+    <message>
+        <location filename="../BiliDownloader/pages/set_info.py" line="34"/>
+        <source>They are written to the file as metadata and can help the player.</source>
+        <translation>它们会作为元数据写入文件，且对播放器有用。</translation>
     </message>
 </context>
 <context>

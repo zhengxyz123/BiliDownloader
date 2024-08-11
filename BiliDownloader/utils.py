@@ -12,6 +12,8 @@
 # You should have received a copy of the GNU General Public License along with this
 # program. If not, see <https://www.gnu.org/licenses/>.
 
+from functools import lru_cache
+
 import urllib3
 
 headers = {
@@ -19,10 +21,9 @@ headers = {
 }
 
 
-def get_json(method: str, url: str, **kwargs) -> dict:
-    if "headers" in kwargs:
-        del kwargs["headers"]
-    return urllib3.request(method, url, headers=headers, **kwargs).json()
+@lru_cache()
+def get_json(method: str, url: str) -> dict:
+    return urllib3.request(method, url, headers=headers).json()
 
 
 def sec2str(duration: int) -> str:

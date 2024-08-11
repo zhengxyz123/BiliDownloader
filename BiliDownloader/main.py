@@ -17,6 +17,8 @@ from PySide6.QtWidgets import QWizard
 
 from BiliDownloader.pages import PageEnum
 from BiliDownloader.pages.get_info import GetInfoWizardPage
+from BiliDownloader.pages.playlist import PlaylistWizardPage
+from BiliDownloader.pages.set_info import SetInfoWizardPage
 from BiliDownloader.pages.start import StartWizardPage
 
 
@@ -30,6 +32,8 @@ class MainWindow(QWizard):
 
         self.setPage(PageEnum.StartPage, StartWizardPage(self))
         self.setPage(PageEnum.GetInfoPage, GetInfoWizardPage(self))
+        self.setPage(PageEnum.SetInfoPage, SetInfoWizardPage(self))
+        self.setPage(PageEnum.PlaylistPage, PlaylistWizardPage(self))
         self.setStartId(PageEnum.StartPage)
 
 

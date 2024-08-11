@@ -2,9 +2,11 @@ i18n_files := i18n/zh_CN.ts
 
 py_files := BiliDownloader/main.py
 py_files += BiliDownloader/pages/get_info.py
+py_files += BiliDownloader/pages/playlist.py
+py_files += BiliDownloader/pages/set_info.py
 py_files += BiliDownloader/pages/start.py
 
-.PHONY: run clean
+.PHONY: clean
 
 lupdate: $(py_files)
 	@pyside6-lupdate $(py_files) -ts i18n/zh_CN.ts
