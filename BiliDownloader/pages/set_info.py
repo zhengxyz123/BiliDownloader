@@ -21,8 +21,9 @@ from PySide6.QtWidgets import (
     QWizard,
     QWizardPage,
 )
+from yt_dlp import YoutubeDL
 
-from BiliDownloader.utils import get_json
+from BiliDownloader.utils import bilibili_api
 
 
 class SetInfoWizardPage(QWizardPage):
@@ -32,6 +33,9 @@ class SetInfoWizardPage(QWizardPage):
         self.setSubTitle(
             self.tr("They are written to the file as metadata and can help the player.")
         )
+
+    def initializePage(self) -> None:
+        pass
 
 
 __all__ = ("SetInfoWizardPage",)

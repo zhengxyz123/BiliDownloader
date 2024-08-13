@@ -16,14 +16,16 @@ from functools import lru_cache
 
 import urllib3
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows U Windows NT 6.1 en-US rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6"
-}
+
+user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0"
 
 
 @lru_cache()
-def get_json(method: str, url: str) -> dict:
-    return urllib3.request(method, url, headers=headers).json()
+def bilibili_api(method: str, url: str, **kwargs) -> dict:
+    if "headers" not in kwargs:
+        kwargs["headers"] = {}
+    kwargs["headers"]["User-Agent"] = user_agent
+    return urllib3.request(method, f"https://api.bilibili.com/x/{url}", **kwargs).json()
 
 
 def sec2str(duration: int) -> str:
@@ -38,4 +40,4 @@ def sec2str(duration: int) -> str:
     return f"00:{second:02}"
 
 
-__all__ = ("get_json", "sec2str")
+__all__ = ("bilibili_api", "sec2str")

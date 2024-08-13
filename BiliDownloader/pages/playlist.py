@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (
     QWizardPage,
 )
 
-from BiliDownloader.utils import get_json
+from BiliDownloader.utils import bilibili_api
 
 
 class PlaylistWizardPage(QWizardPage):

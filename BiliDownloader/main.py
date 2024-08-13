@@ -27,8 +27,8 @@ class MainWindow(QWizard):
         super().__init__(parent)
         self.setWindowTitle("BiliDownloader")
         self.setAttribute(Qt.WidgetAttribute.WA_InputMethodEnabled, True)
-        self.setGeometry(0, 0, 500, 375)
-        self.setMinimumSize(500, 375)
+        self.setGeometry(0, 0, 600, 500)
+        self.setMinimumSize(600, 500)
 
         self.setPage(PageEnum.StartPage, StartWizardPage(self))
         self.setPage(PageEnum.GetInfoPage, GetInfoWizardPage(self))
